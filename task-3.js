@@ -61,6 +61,7 @@ function displayCartItems(){
         console.log(item.product.name + " " + item.quantity);
     }
 
+    // calling the reduce function to get the total price of the items in the cart
     const total = cart.reduce((total, item) => total + item.product.price * item.quantity, 0);
     console.log('$ ',total)
 
