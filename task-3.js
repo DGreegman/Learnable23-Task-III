@@ -1,3 +1,4 @@
+const prompt = require('prompt-sync')({ sigint: true });
 /* 
     Building a simple Console E-commerce Website 
 
@@ -35,7 +36,7 @@ function displayItems() {
     // });
     console.log("These are the Available Items we have in stock: ");
     for(item of items) {
-        console.log(item.id + "\tname:\t" + item.name + "\tprice: " + item.price);
+        console.log(item.id + " " + item.name + " " + item.price);
     }
 }
 
@@ -67,6 +68,48 @@ function displayCartItems(){
 
 }
 
-// displayItems();
-addToCart(1, 2);
-displayCartItems()
+/* 
+    creating a startShopping function to start the shopping process
+    1. display available items
+    2. add items to cart
+    3. display items in cart
+    4. exit
+    5. display total price of items in cart
+    6. display thank you message
+    7. display error message if the item is not available
+    8. display error message if the quantity is not valid
+
+*/
+
+function startShopping() {
+    console.log("Welcome to the Simple Console E-commerce Website built By Gracious");
+    console.log("These are the Available Items we have in stock: ");
+    displayItems();
+    while(true) {
+
+        const config = {
+            promptMessage: "Enter your preference: "
+          };
+
+        const choice = prompt(config.promptMessage);
+        config.name = choice
+
+        if(choice.toLowerCase() === "checkout") {
+            displayCartItems();
+            break;
+        }
+
+       const productID = parseInt(choice);
+
+       if(!items.find((item) => item.id === productID)) {
+           console.log("Invalid Item");
+           continue;
+       }
+       const quantity = parseInt(prompt("Enter the quantity: "));
+
+       addToCart(productID, quantity);
+        
+    }
+}
+
+startShopping()
