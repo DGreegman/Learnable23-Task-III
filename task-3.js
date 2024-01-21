@@ -109,18 +109,6 @@ function displayCartItems(){
 
 }
 
-/* 
-    creating a startShopping function to start the shopping process
-    1. display available items
-    2. add items to cart
-    3. display items in cart
-    4. exit
-    5. display total price of items in cart
-    6. display thank you message
-    7. display error message if the quantity is not valid
-
-*/
-
 
 
 // function to startShopping 
