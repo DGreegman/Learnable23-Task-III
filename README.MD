@@ -3,10 +3,10 @@
 > This a simple console E-commerce website 
 
 # Setup
-
-> To set up this project
     npm install
-    
+
+> the command above is what you need to run all the setup for the project to run properly 
+
 
 ## Features
     1. An array of Items/Products available in the E-commerce Website
